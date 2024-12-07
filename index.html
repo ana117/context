@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Context
+    </title>
+    <meta name="description" content="A quick text share" />
+
+    <link rel="stylesheet" href="/context/style.css" />
+	</head>
+
+	<body class="flex h-screen max-h-screen flex-col bg-background font-mono text-text">
+    <textarea
+      id="text-input"
+      class="h-full w-full resize-none bg-background p-2 pb-4 text-xl outline-none placeholder:italic"
+      placeholder="Type here"
+      maxlength="10000"
+    ></textarea>
+
+    <div class="absolute right-8 bottom-14 text-background bg-text/50 hover:bg-text px-2 py-1 rounded-md duration-500">
+      <p>
+        <span id="char-count"></span> / 10000
+      </p>
+    </div>
+
+    <footer class="flex w-full items-center justify-between gap-2 bg-secondary/50 text-xl">
+      <div class="w-5/6 p-2 text-clip overflow-hidden flex items-center gap-2">
+        <button class="w-1/6 p-1 hover:bg-secondary" id="copy-button">
+          <img src="/context/copy.svg" alt="Copy" class="h-6 w-6" />  
+        </button>
+        <span class="select-all w-5/6" id="generated-link"></span>
+      </div>
+
+      <div class="w-1/6 flex items-center justify-end gap-2">
+        <button class="p-2 hover:bg-secondary" id="generate-button"> Generate </button>
+        <a
+          href="https://github.com/ana117/context"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 hover:bg-secondary"
+        >
+          <img src="/context/github.svg" alt="GitHub" class="h-6 w-6" />
+        </a>
+      </div>
+    </footer>
+
+    <script src="/context/lz-string.js"></script>
+    <script src="/context/script.js"></script>
+	</body>
+</html>
